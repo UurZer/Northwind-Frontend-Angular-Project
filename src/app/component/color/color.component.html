@@ -1,12 +1,8 @@
-<table class="table">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Renk Adı</th>
-        </tr>
-    </thead>
-    <tr *ngFor="let color of colors">
-        <td>{{color.id}}</td>
+<div class="list-group">
+    <button [class]="getAllColorClass()" routerLink="/cars" type="button" (click)="setFlagTrue()" class="list-group-item list-group-item-action " aria-current="true">
+      Tümü Listele
+    </button>
+    <button [class]="getCurrentColorClass(color)"  (click)="setCurrentColor(color)" routerLink="/cars/color/{{color.id}}" type="button" *ngFor="let color of colors" class="list-group-item list-group-item-action" aria-current="true">
         <td>{{color.colorName}}</td>
-    </tr>
-</table>
+      </button>
+  </div>
