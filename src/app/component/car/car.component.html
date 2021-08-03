@@ -1,22 +1,9 @@
-<table class="table">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Marka</th>
-            <th>Renk</th>
-            <th>Model Yılı</th>
-            <th>Günlük Ücreti</th>
-            <th>Açıklama</th>
-            <th>Araba</th>
-        </tr>
-    </thead>
-    <tr *ngFor="let car of cars">
-        <td>{{car.id}}</td>
-        <td>{{car.brandName}}</td>
-        <td>{{car.colorName}}</td>
-        <td>{{car.modelYear}}</td>
-        <td>{{car.dailyPrice}}</td>
-        <td>{{car.description}}</td>
-        <td>{{car.carName}}</td>
-    </tr>
-</table>
+<div *ngFor="let car of cars" class="card" style="width: 18rem; float: left;">
+    <div class="card-body">
+      <h5 class="card-title">{{car.brandName}} - {{car.carName}}</h5>
+      <span> Günlük Ücret :<strong>{{car.dailyPrice}}</strong></span>
+      <p class="card-text">{{car.description}}</p>
+      <p>{{car.colorName}}</p>
+      <a routerLink="/cars/cardetail/{{car.id}}" class="btn btn-primary">Detay</a>
+    </div>
+  </div>
