@@ -10,6 +10,8 @@ import { CarService } from 'src/app/services/car.service';
 })
 export class CarComponent implements OnInit {
   cars: Car[] = [];
+
+
   constructor(private carService: CarService, private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -18,8 +20,6 @@ export class CarComponent implements OnInit {
         this.getCarsByBrand(params["brandid"])
       }else if(params["colorid"]){
         this.getCarsByColor(params["colorid"])
-      }else if(params["carid"]){
-        this.getCarDetail(params["carid"])
       }
       else
         this.getCars()
@@ -44,9 +44,5 @@ export class CarComponent implements OnInit {
     })
   }
 
-  getCarDetail(carId:number){
-    this.carService.getCarDetail(carId).subscribe(response=>{
-      this.cars=response.data
-    })
-  }
+
 }

@@ -1,3 +1,4 @@
+import { CarDetailResponseModel } from './../models/car-detailResponseModel';
 import { ListResponseModel } from './../models/listResponseModel';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -27,9 +28,6 @@ export class CarService {
     return this.httpClient.get<ListResponseModel<Car>>(newPath)
   }
   
-  getCarDetail(carId:number):Observable<ListResponseModel<CarDetail>>{
-    let newPath=this.apiUrl+"/CarImages/getcardetails?carId="+carId
-     return this.httpClient.get<ListResponseModel<CarDetail>>(newPath)
-  }
+  
 }
 
